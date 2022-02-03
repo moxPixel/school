@@ -1,0 +1,104 @@
+<?php //0420aeab90fc9310e67c7f40042b2642
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'id' => [
+                        0,
+                    ],
+                    'dateNow' => [
+                        1,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT c0_.id AS id_0, c0_.created_at AS created_at_1, c0_.start AS start_2, c0_.end AS end_3, c0_.name AS name_4, MONTH(c0_.start) AS sclr_5, SUM(DATEDIFF(c0_.end, c0_.start)) AS sclr_6, c0_.category_id AS category_id_7, c0_.session_id AS session_id_8, c0_.teacher_id AS teacher_id_9 FROM calendar c0_ WHERE c0_.teacher_id = ? AND YEAR(c0_.start) = YEAR(?) GROUP BY sclr_5 ORDER BY sclr_5 ASC',
+            ],
+        ],
+        'stdClass' => [
+            'isMixed' => [
+                2 => true,
+            ],
+            'aliasMap' => [
+                2 => [
+                    'c' => 'App\\Entity\\Calendar',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'created_at_1' => 'createdAt',
+                    'start_2' => 'start',
+                    'end_3' => 'end',
+                    'name_4' => 'name',
+                ],
+            ],
+            'scalarMappings' => [
+                2 => [
+                    'sclr_5' => 'month',
+                    'sclr_6' => 'total',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'sclr_5' => 'string',
+                    'sclr_6' => 'string',
+                    'category_id_7' => 'integer',
+                    'session_id_8' => 'integer',
+                    'teacher_id_9' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'c' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'category_id_7' => 'category_id',
+                    'session_id_8' => 'session_id',
+                    'teacher_id_9' => 'teacher_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'c',
+                    'created_at_1' => 'c',
+                    'start_2' => 'c',
+                    'end_3' => 'c',
+                    'name_4' => 'c',
+                    'category_id_7' => 'c',
+                    'session_id_8' => 'c',
+                    'teacher_id_9' => 'c',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Calendar',
+                    'created_at_1' => 'App\\Entity\\Calendar',
+                    'start_2' => 'App\\Entity\\Calendar',
+                    'end_3' => 'App\\Entity\\Calendar',
+                    'name_4' => 'App\\Entity\\Calendar',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

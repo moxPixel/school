@@ -1,0 +1,107 @@
+<?php //36046ece85d01f16aa3f45ffba0b789c
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT u0_.id AS id_0, u0_.email AS email_1, u0_.roles AS roles_2, u0_.password AS password_3, u0_.lastname AS lastname_4, u0_.firstname AS firstname_5, u0_.picture AS picture_6, u0_.phone AS phone_7, u0_.checking AS checking_8, u0_.created_at AS created_at_9, u0_.sexe AS sexe_10, COUNT(u0_.id) AS sclr_11, u0_.session_id AS session_id_12, u0_.remuneration_id AS remuneration_id_13 FROM user u0_ GROUP BY u0_.roles',
+            ],
+        ],
+        'stdClass' => [
+            'isMixed' => [
+                2 => true,
+            ],
+            'aliasMap' => [
+                2 => [
+                    'u' => 'App\\Entity\\User',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'email_1' => 'email',
+                    'roles_2' => 'roles',
+                    'password_3' => 'password',
+                    'lastname_4' => 'lastname',
+                    'firstname_5' => 'firstname',
+                    'picture_6' => 'picture',
+                    'phone_7' => 'Phone',
+                    'checking_8' => 'checking',
+                    'created_at_9' => 'createdAt',
+                    'sexe_10' => 'sexe',
+                ],
+            ],
+            'scalarMappings' => [
+                2 => [
+                    'sclr_11' => 'total',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'sclr_11' => 'integer',
+                    'session_id_12' => 'integer',
+                    'remuneration_id_13' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'u' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'session_id_12' => 'session_id',
+                    'remuneration_id_13' => 'remuneration_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'u',
+                    'email_1' => 'u',
+                    'roles_2' => 'u',
+                    'password_3' => 'u',
+                    'lastname_4' => 'u',
+                    'firstname_5' => 'u',
+                    'picture_6' => 'u',
+                    'phone_7' => 'u',
+                    'checking_8' => 'u',
+                    'created_at_9' => 'u',
+                    'sexe_10' => 'u',
+                    'session_id_12' => 'u',
+                    'remuneration_id_13' => 'u',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\User',
+                    'email_1' => 'App\\Entity\\User',
+                    'roles_2' => 'App\\Entity\\User',
+                    'password_3' => 'App\\Entity\\User',
+                    'lastname_4' => 'App\\Entity\\User',
+                    'firstname_5' => 'App\\Entity\\User',
+                    'picture_6' => 'App\\Entity\\User',
+                    'phone_7' => 'App\\Entity\\User',
+                    'checking_8' => 'App\\Entity\\User',
+                    'created_at_9' => 'App\\Entity\\User',
+                    'sexe_10' => 'App\\Entity\\User',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

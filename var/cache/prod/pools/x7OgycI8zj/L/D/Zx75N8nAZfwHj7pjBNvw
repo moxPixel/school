@@ -1,0 +1,101 @@
+<?php //3b9449cb537326ca88d4c98de292663a
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'session' => [
+                        0,
+                    ],
+                    'dateNow' => [
+                        1,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT r0_.id AS id_0, r0_.note AS note_1, r0_.remark AS remark_2, r0_.created_at AS created_at_3, r0_.name AS name_4, COUNT(r0_.category_id) AS sclr_5, SUM(r0_.note) / COUNT(r0_.note) AS sclr_6, r0_.user_id AS user_id_7, r0_.category_id AS category_id_8 FROM rating r0_ INNER JOIN user u1_ ON r0_.user_id = u1_.id WHERE u1_.session_id = ? AND YEAR(r0_.created_at) = YEAR(?) GROUP BY r0_.category_id',
+            ],
+        ],
+        'stdClass' => [
+            'isMixed' => [
+                2 => true,
+            ],
+            'aliasMap' => [
+                2 => [
+                    'r' => 'App\\Entity\\Rating',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'note_1' => 'note',
+                    'remark_2' => 'remark',
+                    'created_at_3' => 'createdAt',
+                    'name_4' => 'name',
+                ],
+            ],
+            'scalarMappings' => [
+                2 => [
+                    'sclr_5' => 'category',
+                    'sclr_6' => 'total',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'sclr_5' => 'integer',
+                    'sclr_6' => 'string',
+                    'user_id_7' => 'integer',
+                    'category_id_8' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'r' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'user_id_7' => 'user_id',
+                    'category_id_8' => 'category_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'r',
+                    'note_1' => 'r',
+                    'remark_2' => 'r',
+                    'created_at_3' => 'r',
+                    'name_4' => 'r',
+                    'user_id_7' => 'r',
+                    'category_id_8' => 'r',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Rating',
+                    'note_1' => 'App\\Entity\\Rating',
+                    'remark_2' => 'App\\Entity\\Rating',
+                    'created_at_3' => 'App\\Entity\\Rating',
+                    'name_4' => 'App\\Entity\\Rating',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -1,0 +1,223 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title %}
+Calendrier
+{% endblock %}
+
+{% block final_stylesheets %}
+
+{% endblock %}
+
+{% block final_javascripts %}
+
+{% endblock %}
+
+{% block content %}
+<!-- Main Content-->
+<div>
+
+
+	<!--begin::Main-->
+	<!--begin::Root-->
+
+	<div class="d-flex flex-column flex-root">
+		<!--begin::Page-->
+		<div class="page d-flex flex-row flex-column-fluid">
+			<!--begin::Wrapper-->
+			<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+				<!--begin::Header-->
+				{% include 'components/_main-header.html.twig' %}
+				<!--end::Header-->
+				<!--begin::Main-->
+				<div class="d-flex flex-column flex-column-fluid">
+					<!--begin::toolbar-->
+					<div class="toolbar" id="kt_toolbar">
+						<div class="container d-flex flex-stack flex-wrap flex-sm-nowrap">
+							<!--begin::Info-->
+							<div class="d-flex flex-column align-items-start justify-content-center flex-wrap me-1">
+								<!--begin::Title-->
+								<a href="{{ path('view-users') }}" class="" onclick="addi()"
+									class="text-dark fw-bolder my-1">Calendrier</a>
+								<!--end::Title-->
+								<!--begin::Breadcrumb-->
+								<ul class="breadcrumb breadcrumb-line bg-transparent text-muted fw-bold p-0 my-1 fs-7">
+									<li class="breadcrumb-item">
+										<a href="{{ path('dashboard_home' ) }}"
+											class="text-muted text-hover-primary">Dashboard</a>
+									</li>
+									<li class="breadcrumb-item text-dark">Calendrier</li>
+								</ul>
+								<!--end::Breadcrumb-->
+							</div>
+							<!--end::Info-->
+							<!--begin::Nav-->
+							<div class="d-flex align-items-center flex-nowrap text-nowrap overflow-auto py-1">
+								<a href="{{ path('view-users') }}"
+									class="btn btn-active-accent  fw-bolder ms-3">Utilisateurs</a>
+								<a href="{{ path('view-sessions') }}"
+									class="btn btn-active-accent  fw-bolder ms-3">Sessions</a>
+								<a href="{{ path('view-calendar') }}"
+									class="btn btn-active-accent active fw-bolder ms-3">Calendrier</a>
+								<a href="{{ path('view-technologies') }}"
+									class="btn btn-active-accent fw-bolder ms-3">Technologies</a>
+								<a href="{{ path('view-course') }}"
+									class="btn btn-active-accent  fw-bolder ms-3">Cours</a>
+
+							</div>
+							<!--end::Nav-->
+						</div>
+					</div>
+					<!--end::toolbar-->
+					<!--begin::Content-->
+					<div class="content fs-6 d-flex flex-column-fluid" id="kt_content">
+						<!--begin::Container-->
+						<div class="container">
+							<!--begin::Profile Account-->
+							<div class="card">
+								<!--begin::Form-->
+								<div class="card-body">
+								<div class="row g-0 g-xl-5 g-xxl-8">
+								<div class="col-xl-12">
+									<div
+										class=" mb-5 d-flex bg-light-success card-rounded flex-grow-1 usersTotal prime">
+										<!--begin::Section-->
+										<div class="py-10 ps-7">
+											<!--begin::Text-->
+											<div>
+												<span class="font-weight-light fs-1 text-gray-800">Vos<br>
+													<span class="fw-bolder fs-1 text-white">Dates</span></span>
+											</div>
+											<!--end::Text-->
+										</div>
+										<!--end::Section-->
+										<!--begin::Pic-->
+										<div class="position-relative bgi-no-repeat bgi-size-contain bgi-position-y-bottom bgi-position-x-end mt-6 flex-grow-1"
+											style="background-image:url('/assets/media/illustrations/todo.png')">
+										</div>
+										<!--end::Pic-->
+									</div>
+								</div>
+							</div>
+									<a href="#" class="menu-link" data-bs-toggle="modal"
+										data-bs-target="#kt_modal_add_calendar">Ajouter une date
+									</a>
+									<div class="table-responsive">
+										<table id="example3"
+											class="table tableadmin table-striped table-bordered text-nowrap">
+											<thead>
+												<tr>
+													<th>Id</th>
+													<th>Technologies</th>
+													<th>Session</th>
+													<th>Formateur</th>
+													<th>Debut</th>
+													<th>Cloture</th>
+													<th>Creation</th>
+													<th class="wd-25p">Options</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for calendar in calendars %}
+												<tr>
+													<td>{{ calendar.id }}</td>
+													<td>{{ calendar.category.name }}</td>
+													<td>{{ calendar.session.name }}</td>
+													<td>{{ calendar.teacher.fullname }}</td>
+													<td>{{ calendar.start | date('d/M/y')}}</td>
+													<td>{{ calendar.end| date('d/M/y')}}</td>
+													<td>{{ calendar.createdAt| date('d/M/y')}}</td>
+													<td>
+														<div
+															class="d-flex justify-content-between text-white pills badge badge-pill ">
+															<a href="{{ path('calendar_clear', { 'id':calendar.id }) }}"><i class="fa fa-trash"></i></a>
+															<a href="{{ path('calendar_edit', { 'id':calendar.id }) }}"><i class="fa fa-edit"></i></a>
+														</div>
+													</td>
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+									<!--end::Table-->
+
+								</div>
+								<!--end::Form-->
+
+								<!--end::Profile Account-->
+							</div>
+							<!--end::Container-->
+						</div>
+						<!--end::Content-->
+					</div>
+					<!--end::Main-->
+					<!--begin::Footer-->
+					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+						<!--begin::Container-->
+						<div class="container d-flex flex-column flex-md-row flex-stack">
+							<!--begin::Copyright-->
+							<div class="text-dark order-2 order-md-1">
+								<span class="text-muted fw-bold me-2">2021©</span>
+								<a href="" target="_blank"
+									class="text-gray-800 text-hover-primary">Unlock-technologies</a>
+							</div>
+							<!--end::Copyright-->
+							<!--begin::Menu-->
+							<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
+								<li class="menu-item">
+									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+								</li>
+								<li class="menu-item">
+									<a href="https://keenthemes.com/support" target="_blank"
+										class="menu-link px-2">Support</a>
+								</li>
+								<li class="menu-item">
+									<a href="https://keenthemes.com/products/start-html-pro" target="_blank"
+										class="menu-link px-2">Purchase</a>
+								</li>
+							</ul>
+							<!--end::Menu-->
+						</div>
+						<!--end::Container-->
+					</div>
+					<!--end::Footer-->
+				</div>
+				<!--end::Wrapper-->
+				<!--begin::Sidebar-->
+				{% if app.user.role == "Administrateur" %}
+				{{ render(controller('App\\Controller\\AdministratorController::sideBar')) }}
+				{% elseif app.user.role == "Formateur" %}
+				{{ render(controller('App\\Controller\\TeacherController::sideBar')) }}
+				{% elseif app.user.role == "Eleve" %}
+				{{ render(controller('App\\Controller\\StudentController::sideBar')) }}
+				{% endif %}
+				<!--end::Sidebar-->
+			</div>
+			<!--end::Page-->
+		</div>
+		<!--end::Root-->
+		{% include 'messenger/index.html.twig' %}
+		<!--begin::Scrolltop-->
+		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
+			<!--begin::Svg Icon | path: icons/duotone/Navigation/Up-2.svg-->
+			<span class="svg-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+					height="24px" viewBox="0 0 24 24" version="1.1">
+					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<polygon points="0 0 24 0 24 24 0 24" />
+						<rect fill="#000000" opacity="0.5" x="11" y="10" width="2" height="10" rx="1" />
+						<path
+							d="M6.70710678,12.7071068 C6.31658249,13.0976311 5.68341751,13.0976311 5.29289322,12.7071068 C4.90236893,12.3165825 4.90236893,11.6834175 5.29289322,11.2928932 L11.2928932,5.29289322 C11.6714722,4.91431428 12.2810586,4.90106866 12.6757246,5.26284586 L18.6757246,10.7628459 C19.0828436,11.1360383 19.1103465,11.7686056 18.7371541,12.1757246 C18.3639617,12.5828436 17.7313944,12.6103465 17.3242754,12.2371541 L12.0300757,7.38413782 L6.70710678,12.7071068 Z"
+							fill="#000000" fill-rule="nonzero" />
+					</g>
+				</svg>
+			</span>
+			<!--end::Svg Icon-->
+		</div>
+
+
+	</div>
+
+	<!-- End Main Content-->
+
+
+	{% endblock %}

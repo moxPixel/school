@@ -1,0 +1,62 @@
+
+{% block final_stylesheets %}
+    <link href="{{ asset('assets/fullcalendar/lib/main.css') }}" rel="stylesheet">
+{% endblock %}
+
+
+{% block final_javascripts %}
+    <script src="{{ asset('assets/fullcalendar/lib/main.js') }}"></script>
+    <script>
+ 
+    document.addEventListener('DOMContentLoaded', function() {  
+    var calendarEl = document.getElementById('calendar');
+    var initialLocaleCode = 'fr';
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      dayMaxEventRows: true, // for all non-TimeGrid views
+      views: {
+          timeGrid: {
+              dayMaxEventRows: 6 // adjust to 6 only for timeGridWeek/timeGridDay
+          }
+      },
+      headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+      },
+      locale: initialLocaleCode,
+      initialDate: new Date(),
+      events: [
+        {% if app.user.role == 'Eleve' %}
+      {% for calendar in calendar %}
+      {
+          title:'{{calendar.category.name}} avec {{calendar.teacher.fullname}}',
+          start: '{{calendar.start |date('Y-m-d H:i:s')}}',
+          end: '{{calendar.end |date('Y-m-d H:i:s')}}'
+        
+      }, 
+        {% endfor %}
+      {% endif %}
+        {% if (app.user.role == 'Formateur') or (app.user.role == 'Administrateur') %}
+        {% for calendar in calendarTeacher %}
+        {
+            title:'{{calendar.category.name}} avec {{calendar.teacher.fullname}}',
+            start: '{{calendar.start |date('Y-m-d H:i:s')}}',
+            end: '{{calendar.end |date('Y-m-d H:i:s')}}'
+          
+        }, 
+          {% endfor %}
+        {% endif %}]
+    });
+
+    calendar.render();
+    calendar.setOption('locale','fr');
+    
+  });
+
+        </script>
+{% endblock %}
+
+
+              <div id="calendar" style="background-color:none;"></div>
+
+

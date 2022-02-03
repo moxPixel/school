@@ -1,0 +1,256 @@
+<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <div class="modal-content">
+            <div class="container px-10 py-10">
+                <div class="modal-header py-2 d-flex justify-content-end border-0">
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-light-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                        <span class="svg-icon svg-icon-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                    fill="#000000">
+                                    <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                    <rect fill="#000000" opacity="0.5"
+                                        transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                        x="0" y="7" width="16" height="2" rx="1" />
+                                </g>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <div class="card-header border-0 pt-5">
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder text-dark fs-3">Utilisateurs</span><br>
+                        <span class="text-muted mt-2 fw-bold fs-6">Nouvel utilisateur</span>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Stepper-->
+                    {{
+                    render(controller('App\\Controller\\RegisterController::register',
+                    {'request':app.request})) }}
+                    <!--end::Stepper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="kt_modal_add_session" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <div class="modal-content">
+            <div class="container px-10 py-10">
+                <div class="modal-header py-2 d-flex justify-content-end border-0">
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-light-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                        <span class="svg-icon svg-icon-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                    fill="#000000">
+                                    <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                    <rect fill="#000000" opacity="0.5"
+                                        transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                        x="0" y="7" width="16" height="2" rx="1" />
+                                </g>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <div class="card-header border-0 pt-5">
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder text-dark fs-3">Sessions</span><br>
+                        <span class="text-muted mt-2 fw-bold fs-6">Nouvel session</span>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Stepper-->
+                    {{
+                    render(controller('App\\Controller\\CourseController::addSession',
+                    {'request':app.request})) }}
+                    <!--end::Stepper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="kt_modal_add_calendar" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <div class="modal-content">
+            <div class="container px-10 py-10">
+                <div class="modal-header py-2 d-flex justify-content-end border-0">
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-light-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                        <span class="svg-icon svg-icon-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                    fill="#000000">
+                                    <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                    <rect fill="#000000" opacity="0.5"
+                                        transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                        x="0" y="7" width="16" height="2" rx="1" />
+                                </g>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <div class="card-header border-0 pt-5">
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder text-dark fs-3">Calendrier</span><br>
+                        <span class="text-muted mt-2 fw-bold fs-6">Nouvel date</span>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Stepper-->
+                    {{
+                    render(controller('App\\Controller\\CourseController::addCalendar',
+                    {'request':app.request})) }}
+                    <!--end::Stepper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="kt_modal_add_techno" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <div class="modal-content">
+            <div class="container px-10 py-10">
+                <div class="modal-header py-2 d-flex justify-content-end border-0">
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-light-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                        <span class="svg-icon svg-icon-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                    fill="#000000">
+                                    <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                    <rect fill="#000000" opacity="0.5"
+                                        transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                        x="0" y="7" width="16" height="2" rx="1" />
+                                </g>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <div class="card-header border-0 pt-5">
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder text-dark fs-3">Technologies</span><br>
+                        <span class="text-muted mt-2 fw-bold fs-6">Nouvel technologie</span>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Stepper-->
+                    {{
+                    render(controller('App\\Controller\\CourseController::addTechnoLanguage',
+                    {'request':app.request})) }}
+                    <!--end::Stepper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="kt_modal_add_course" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <div class="modal-content">
+            <div class="container px-10 py-10">
+                <div class="modal-header py-2 d-flex justify-content-end border-0">
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-light-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                        <span class="svg-icon svg-icon-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                    fill="#000000">
+                                    <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                    <rect fill="#000000" opacity="0.5"
+                                        transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                        x="0" y="7" width="16" height="2" rx="1" />
+                                </g>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <div class="card-header border-0 pt-5">
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder text-dark fs-3">Cours</span><br>
+                        <span class="text-muted mt-2 fw-bold fs-6">Nouveau cours</span>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Stepper-->
+                    {{
+                    render(controller('App\\Controller\\CourseController::addCourse',
+                    {'request':app.request})) }}
+                    <!--end::Stepper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="kt_modal_add_remuneration" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered mw-1000px">
+        <div class="modal-content">
+            <div class="container px-10 py-10">
+                <div class="modal-header py-2 d-flex justify-content-end border-0">
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-light-primary" data-bs-dismiss="modal">
+                        <!--begin::Svg Icon | path: icons/duotone/Navigation/Close.svg-->
+                        <span class="svg-icon svg-icon-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)"
+                                    fill="#000000">
+                                    <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                    <rect fill="#000000" opacity="0.5"
+                                        transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)"
+                                        x="0" y="7" width="16" height="2" rx="1" />
+                                </g>
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                    </div>
+                    <!--end::Close-->
+                </div>
+                <div class="card-header border-0 pt-5">
+                    <h3 class="card-title align-items-start flex-column">
+                        <span class="card-label fw-bolder text-dark fs-3">Remuneration</span><br>
+                        <span class="text-muted mt-2 fw-bold fs-6">Nouvel remuneration</span>
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Stepper-->
+                    {{
+                    render(controller('App\\Controller\\CourseController::addRemuneration',
+                    {'request':app.request})) }}
+                    <!--end::Stepper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
